@@ -3,8 +3,8 @@
 ![React Version](https://img.shields.io/badge/release-v1.0.0-blue.svg)
 
 
-#### Description of your project
-This project is a replica of the radio from Portal that displays the time in an arch. The code gets the time through an internet connection.
+#### Description
+This project is a replica of the radio from Portal that displays the time in an arch.
 
 ## Table of content
 
@@ -19,22 +19,23 @@ This project is a replica of the radio from Portal that displays the time in an 
 #### Environnment Preperation
 1. Using Arduino IDE Boards Manager
 	- [Instructions for Boards Manager](https://github.com/espressif/arduino-esp32/blob/master/docs/arduino-ide/boards_manager.md)
-2. Libraries that are used in the project need to be added through the Library Manager. \(Include Library)\
+2. Libraries that are used in the project need to be added through the Library Manager. (Include Library)
 	- Some of the libraries can be installed through Manage Libraries in the Include Library section under the Sketch tab.
-	- The libraries can also be installed using the zip files through Add .ZIP Libraries in the Include Library section under the Sketch tab.
-3. The project needs a WiFi connection in order to get the time. The SSID and Password need to be added.
+	- The libraries can also be installed through Add .ZIP Libraries in the Include Library section under the Sketch tab.
+3. Modifications need to be made to the TFT_eSPI.cpp file to allow it to work with other display drivers and display types.
+4. The project needs a WiFi connection in order to get the time. The SSID and Password need to be added.
 ```c++
 const char *ssid     = "<SSID>";
 const char *password = "<PASSWORD>";
 ```
-4. The project needs the server pool for your region as well as the time from UTC \(Coordinated Universal Time)\
+5. The project needs the server pool for your region as well as the time from UTC (Coordinated Universal Time)
 ```c++
 // You can specify the time server pool and the offset (in seconds, can be
 // changed later with setTimeOffset() ). Additionaly you can specify the
 // update interval (in milliseconds, can be changed using setUpdateInterval() ).
 NTPClient timeClient(ntpUDP, "north-america.pool.ntp.org", -25200, 60000);
 ```
-5. The .STL files can be found here. some modifications need to be made after printing in order to duplicate project.
+6. The .STL files can be found here. some modifications need to be made after printing in order to duplicate project.
 	- [STL files](https://www.thingiverse.com/thing:4705587)
 
 ## Built With
@@ -69,7 +70,7 @@ I have always wanted to make my own alarm clock and I felt that making the alarm
 - [NTPClient](https://github.com/arduino-libraries/NTPClient)
 - [JPEGDecoder](https://github.com/Bodmer/JPEGDecoder)
 - [Adafruit-ST7735-Library](https://github.com/adafruit/Adafruit-ST7735-Library)
->There may not be used or be the correct library so let me know if it isn't working.
+>Some libraries may not be used or be the correct library so let me know if it isn't working.
 >There may also be some libraries that I missed so please let me know if something isn't working.
 
 
